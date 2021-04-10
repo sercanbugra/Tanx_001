@@ -1,10 +1,9 @@
-
 #define BLYNK_PRINT Serial
 #include <ESP8266WiFi.h>
 #include <Blynk.h>
-#include <BlynkSimpleEsp8266.h>
+//#include <BlynkSimpleEsp8266.h>
 #include <SPI.h>
-#include <nRF24L01.h>
+//#include <nRF24L01.h>
 #include <RF24.h>
 #include <Servo.h>
 
@@ -24,14 +23,6 @@ Servo servo;
 #define LeftMotorDir1    2      // L298N in3 motors Left            GPIO2(D4)
 #define LeftMotorDir2    0     // L298N in4 motors Left            GPIO0(D3)
 
-/*
-RF24 radio(8, 9); // CE, CSN
-const byte address[6] = "00001";
-char receivedData[32] = "";
-int  xAxis, yAxis;
-int motorSpeedA = 0;
-int motorSpeedB = 0;
-*/
 
 char auth[] = "xVGQy0ru1MdAjFf1I0dRaVTyG8yWimGh";
 char ssid[] = "FiberHGW_TP6392_2.4GHz";
@@ -65,7 +56,6 @@ servo.write(a);
 
 void moveControl(int x, int y)
 {
-
 
 
 //ileri
@@ -176,7 +166,6 @@ analogWrite(ates,0);
     digitalWrite(RightMotorDir2,LOW);
     digitalWrite(LeftMotorDir1,HIGH);
     digitalWrite(LeftMotorDir2,LOW);
-
  
  }
 
@@ -185,7 +174,6 @@ void loop()
 {
   
   Blynk.run();
-
 
 }
 
